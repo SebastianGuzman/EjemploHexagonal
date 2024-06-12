@@ -7,6 +7,6 @@ WORKDIR /app
 
 COPY ./build/libs/resources-infra-1.0.0-SNAPSHOT.jar /app/spring-boot-application.jar
 
-EXPOSE 8000
+EXPOSE 9000
 
 ENTRYPOINT ["java","-jar","/app/spring-boot-application.jar"]
