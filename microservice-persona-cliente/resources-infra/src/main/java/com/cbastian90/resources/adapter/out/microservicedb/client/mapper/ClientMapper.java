@@ -11,7 +11,6 @@ public class ClientMapper {
         return Client.builder()
                 .clientId(Math.toIntExact(entity.getId()))
                 .password("******")
-                .clientId(Math.toIntExact(entity.getPerson().getId()))
                 .estado(entity.getState())
                 .person(Person
                         .builder()
