@@ -50,3 +50,6 @@ spring:
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL8Dialect  # Dialecto correcto de Oracle para tu versión
 
+clients:
+    persona-cliente:
+        url: http://localhost:9000/v1
