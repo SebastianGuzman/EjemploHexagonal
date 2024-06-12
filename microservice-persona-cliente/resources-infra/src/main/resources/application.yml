@@ -1,0 +1,52 @@
+server:
+  port: 8001
+  servlet:
+    contextPath: /
+management:
+  endpoints:
+    web:
+      base-path: /v1
+      exposure:
+        include: health,info,loggers,metrics
+swagger:
+  enabled: true
+logging:
+  pattern:
+    #console: '%d{yyyy-MM-dd HH:mm:ss.SSS} | marker=%marker |  clientId=%X{clientId} | level=%5p | thread=%thread | traceId=%X{traceId} spanId=%X{spanId} |  projectVersion=%X{projectVersion} |class=%class{15}.%L | msg="%.-50000m"%n'
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} |level=%5p |class=%class{15}.%L | msg="%.-50000m"%n'
+  level:
+    org:
+      springframework:
+        ldap: DEBUG
+    #root: DEBUG
+
+
+spring:
+  application:
+    name: "microservicio-persona-cliente"
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+
+
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          jwk-set-uri: "https://localhost:8000/oauth2/jwks"
+        opaque-token:
+          introspection-uri: "https://localhost:8000/oauth2/introspect"
+          client-id: "demo-security"
+          client-secret: "secret"
+
+  datasource:
+    url: "jdbc:mysql://localhost:3306/microservice_db"  # Cambia <hostname>, <port> y <SID> por los valores de tu servidor
+    username: "root"
+    password: "root"
+    driver-class-name: com.mysql.cj.jdbc.Driver #oracle.jdbc.OracleDriver  # Clase del controlador JDBC de Oracle
+
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect  # Dialecto correcto de Oracle para tu versión
+
