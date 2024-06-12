@@ -1,5 +1,9 @@
 FROM openjdk:11-jdk-buster
 
+ENV DATABASE_URL="jdbc:mysql://wizardly_moser:3306/microservice_db"
+ENV DATABASE_USERNAME="root"
+ENV DATABASE_PASSWORD="root"
+
 RUN mkdir /app
 
 # Set the working directory in the container
