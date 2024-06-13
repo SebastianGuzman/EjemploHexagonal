@@ -52,4 +52,4 @@ spring:
 
 clients:
     persona-cliente:
-        url: http://localhost:9000/v1
+        host: http://localhost:9000/v1/api-rest
