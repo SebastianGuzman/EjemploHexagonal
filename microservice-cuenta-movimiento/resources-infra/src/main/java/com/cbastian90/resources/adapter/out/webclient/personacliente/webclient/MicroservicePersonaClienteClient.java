@@ -1,4 +1,4 @@
-package com.cbastian90.resources.adapter.out.webclient.personacliente;
+package com.cbastian90.resources.adapter.out.webclient.personacliente.webclient;
 
 import com.cbastian90.resources.adapter.out.webclient.personacliente.dto.PersonaClienteDtoResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,7 +10,7 @@ import reactor.core.publisher.Mono;
 
 @Slf4j
 @AllArgsConstructor
-public class microserviceClient {
+public class MicroservicePersonaClienteClient {
 
     private final WebClient webClient;
     private final String URI_MICRO_SERVICE = "/clientes";
