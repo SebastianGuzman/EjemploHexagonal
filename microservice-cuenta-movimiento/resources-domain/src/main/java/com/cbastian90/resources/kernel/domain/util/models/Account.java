@@ -1,6 +1,5 @@
-package com.cbastian90.resources.kernel.command.createAccount;
+package com.cbastian90.resources.kernel.domain.util.models;
 
-import com.cbastian90.resources.kernel.command.Command;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,10 +12,11 @@ import java.math.BigDecimal;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateAccountCommand implements Command, Serializable {
+public class Account implements Serializable {
+    private Long accountId;
     private String numeroCuenta;
     private String tipoCuenta;
     private BigDecimal saldoInicial;
     private String estado;
-    private Long clienteId;
+    private Client client;
 }
