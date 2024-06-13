@@ -1,5 +1,6 @@
 package com.cbastian90.resources.adapter.out.webclient.personacliente;
 
+import com.cbastian90.resources.adapter.out.webclient.personacliente.dto.PersonaClienteDtoResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +15,7 @@ public class microserviceClient {
     private final WebClient webClient;
     private final String URI_MICRO_SERVICE = "/clientes";
 
-    public Mono<String> getPersonaCliente(Long id) {
+    public Mono<PersonaClienteDtoResponse> getPersonaCliente(Long id) {
         log.info("Calling microservice");
         return webClient.get()
                 .uri(URI_MICRO_SERVICE + "/" + id)
@@ -32,7 +33,7 @@ public class microserviceClient {
                         }
 
                         return clientResponse.
-                                bodyToMono(String.class);
+                                bodyToMono(PersonaClienteDtoResponse.class);
                     } else {
                         log.info("getAccounts clientResponse {}", clientResponse);
                         return Mono.error(new RuntimeException("Error, Client Information details"));
