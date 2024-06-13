@@ -14,6 +14,8 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateAccountCommand implements Command, Serializable {
+    private String authorization;
+    private String messageUid;
     private String numeroCuenta;
     private String tipoCuenta;
     private BigDecimal saldoInicial;
